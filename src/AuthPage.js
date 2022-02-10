@@ -27,11 +27,12 @@ export default function AuthPage(props) {
     <div className='auth'>
       <h1><em>Boardzo</em></h1>
       {/* on submit, sign the user in using the function defined above */}
-      <form>
+      <form onSubmit={handleSignIn}>
         <label>
             Email
           {/* on change, update the form state for email */}
-          <input required type="email" name="email" />
+          <input value={email} required type="email" name="email" 
+          onChange={e => setEmail(e.target.value)}/>
         </label>
         <label>
             Password
