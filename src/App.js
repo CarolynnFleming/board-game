@@ -75,6 +75,11 @@ export default function App() {
             </Route>
             <Route exact path="/create">
               {/* if there is a user, render the create page. Otherwise, redirect to the home route/auth page */}
+              {
+                user 
+                  ? <CreatePage />
+                  : <Redirect to="/"/>
+              }
             </Route>
           </Switch>
         </main>
