@@ -13,11 +13,6 @@ export default function CreatePage() {
   const [minPlayers, setMinPlayers] = useState(0);
   const [maxPlayers, setMaxPlayers] = useState(0);
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-
-    await createGame(title, genre, designer, description, minPlayers, maxPlayers);
-  }
     // title;
     // genre;
     // designer;
@@ -29,19 +24,20 @@ export default function CreatePage() {
     e.preventDefault();
 
     // create a game
-
+    await createGame(title, genre, designer, description, minPlayers, maxPlayers);
     // use history.push to send the user to the list page
+    window.push('/board-games');
   }
 
   return (
     <div className='create'>
       {/* on submit, call your handleSubmit function */}
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Add board game</h2>
         <label>
             Title
           {/* on change, set the title in state */}
-          <input required name='title' />
+          <input required onChange={e => setTitle(e.target.value)} name='title' />
         </label>
         <label>
             Genre
