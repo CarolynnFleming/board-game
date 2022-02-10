@@ -9,9 +9,9 @@ export default function CreatePage() {
   const [title, setTitle] = useState('');
   const [genre, setGenre] = useState('');
   const [designer, setDesigner] = useState('');
-  const [description, desctription] = useState('');
-  const [minPlayers, setMinPlayers] = useState(0);
-  const [maxPlayers, setMaxPlayers] = useState(0);
+  const [description, setDescription] = useState('');
+  const [minPlayers, setMinPlayers] = useState(1);
+  const [maxPlayers, setMaxPlayers] = useState(1);
 
     // title;
     // genre;
@@ -26,13 +26,13 @@ export default function CreatePage() {
     // create a game
     await createGame(title, genre, designer, description, minPlayers, maxPlayers);
     // use history.push to send the user to the list page
-    window.push('/board-games');
+    history.push('/board-games');
   }
 
   return (
     <div className='create'>
       {/* on submit, call your handleSubmit function */}
-      <form onSubmit={handleSubmit}>
+      <form type="form" onSubmit={handleSubmit}>
         <h2>Add board game</h2>
         <label>
             Title
@@ -55,22 +55,22 @@ export default function CreatePage() {
         <label>
             Designer
           {/* on change, set the designer in state */}
-          <input required name='designer' />
+          <input required onChange={e => setDesigner(e.target.value)} name='designer' />
         </label>
         <label>
             Min Players
           {/* on change, set the min players in state */}
-          <input required name='min_players' />
+          <input required onChange={e => setMinPlayers(e.target.value)} name='min_players' />
         </label>
         <label>
             Max Players
           {/* on change, set the max players in state */}
-          <input required name='max_players' />
+          <input required onChange={e => setMaxPlayers(e.target.value)} name='max_players' />
         </label>
         <label>
             Description
           {/* on change, set the description in state */}
-          <textarea required name='max_players' />
+          <textarea required onChange={e => setDescription(e.target.value)} name='description' />
         </label>
         <button>Create game</button>
       </form>

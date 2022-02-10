@@ -4,7 +4,7 @@ import Game from './Game';
 
 export default function ListPage() {
   // you'll need some state to hold onto the array of games
-
+  const [games, setGames] = useState([]);
   // fetch the games on load and inject them into state
   return (
     <div className='list games'>
