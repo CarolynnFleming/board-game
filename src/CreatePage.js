@@ -42,7 +42,7 @@ export default function CreatePage() {
         <label>
             Genre
           {/* on change, set the genre in state */}
-          <select required>
+          <select required onChange={e => setGenre(e.target.value)}>
             <option>Tile-laying</option>
             <option>Economic</option>
             <option>War</option>
