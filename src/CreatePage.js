@@ -1,10 +1,23 @@
 import { useState } from 'react';
 import { createGame } from './services/fetch-utils';
+import { useHistory } from 'react-router-dom';
 
 export default function CreatePage() {
   // you'll need the history hook from react-router-dom to do your redirecting in the handleSubmit
-
+  const history = useHistory();
   // here's the state you'll need:
+  const [title, setTitle] = useState('');
+  const [genre, setGenre] = useState('');
+  const [designer, setDesigner] = useState('');
+  const [description, desctription] = useState('');
+  const [minPlayers, setMinPlayers] = useState(0);
+  const [maxPlayers, setMaxPlayers] = useState(0);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    await createGame(title, genre, designer, description, minPlayers, maxPlayers);
+  }
     // title;
     // genre;
     // designer;
