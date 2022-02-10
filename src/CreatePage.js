@@ -24,7 +24,7 @@ export default function CreatePage() {
     e.preventDefault();
 
     // create a game
-    await createGame(title, genre, designer, description, minPlayers, maxPlayers);
+    await createGame({ title: title, genre: genre, designer: designer, description: description, min_players: minPlayers, max_players: maxPlayers });
     // use history.push to send the user to the list page
     history.push('/board-games');
   }
@@ -70,7 +70,7 @@ export default function CreatePage() {
         <label>
             Description
           {/* on change, set the description in state */}
-          <textarea required onChange={e => setDescription(e.target.value)} name='description' />
+          <textarea required onChange={e => setDescription(e.target.value)} name='max_players' />
         </label>
         <button>Create game</button>
       </form>
