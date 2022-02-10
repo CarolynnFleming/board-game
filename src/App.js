@@ -59,6 +59,11 @@ export default function App() {
             </Route>
             <Route exact path="/board-games">
               {/* if there is a user, render the board games list. Otherwise, redirect to the home route/auth page */}
+              {
+                user
+                  ? <ListPage />
+                  : <Redirect to="/" />
+              }
             </Route>
             <Route exact path="/board-games/:id">
               {/* if there is a user, render the detail page. Otherwise, redirect to the home route/auth page */}
