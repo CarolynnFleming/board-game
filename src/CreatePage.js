@@ -70,7 +70,7 @@ export default function CreatePage() {
         <label>
             Description
           {/* on change, set the description in state */}
-          <textarea required onChange={e => setDescription(e.target.value)} name='max_players' />
+          <textarea required onChange={e => setDescription(e.target.value)} name='description' />
         </label>
         <button>Create game</button>
       </form>
