@@ -55,22 +55,22 @@ export default function CreatePage() {
         <label>
             Designer
           {/* on change, set the designer in state */}
-          <input required onChange={e => setDesigner(e.target.value)} name='designer' />
+          <input required value={designer} onChange={e => setDesigner(e.target.value)} name='designer' />
         </label>
         <label>
             Min Players
           {/* on change, set the min players in state */}
-          <input required onChange={e => setMinPlayers(e.target.value)} name='min_players' />
+          <input required value={minPlayers} onChange={e => setMinPlayers(e.target.value)} name='min_players' />
         </label>
         <label>
             Max Players
           {/* on change, set the max players in state */}
-          <input required onChange={e => setMaxPlayers(e.target.value)} name='max_players' />
+          <input required value={maxPlayers} onChange={e => setMaxPlayers(e.target.value)} name='max_players' />
         </label>
         <label>
             Description
           {/* on change, set the description in state */}
-          <textarea required onChange={e => setDescription(e.target.value)} name='description' />
+          <textarea required value={description} onChange={e => setDescription(e.target.value)} name='description' />
         </label>
         <button>Create game</button>
       </form>
